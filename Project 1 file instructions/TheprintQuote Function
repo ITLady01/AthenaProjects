@@ -1,0 +1,3 @@
+function​printQuote()​{ 
+// create a variable that calls the getRandomQuote() function // create a variable that initiates your HTML string // using the template in the project instructions, add the two default quote properties, quote​and source 
+// if​there is a quote.citation property, add it the string // if​there is a quote.year property, add it the string // close the string with the necessary closing HTML tags // set the innnerHTML of the .quote-box to the complete HTML string }

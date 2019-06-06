@@ -1,0 +1,5 @@
+function getRandomQuote() {
+// generate a random number between 0 and the last index in the array parameter
+// use the random number and box notation to grab a random item from the quotes
+array
+    // return the random item}
