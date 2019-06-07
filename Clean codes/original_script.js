@@ -52,6 +52,7 @@ let quotes = [
   }
 
 ];
+ 
 
 /***console.log(quotes.length [5]);
 console.log(quotes[quotes.length - 1]);
@@ -59,28 +60,20 @@ quotes.push('Go');
 quotes.log(quotes.join());
 
 /***
-  Create the `getRandomQuote` function to:
-   - Create a variable to store a random number 
-   - Cse the random number to `return` a random quote object from the `quotes` array.
+Create the `getRandomQuote` function
+In addition, added the random number to `return` a random quote object 
 ***/
 
 function getRandomQuote() {
   var randomNumber = Math.floor(Math.random() * quotes.length);
   return quotes[randomNumber];
 }
-//console.log(getRandomQuote());
+//Use this code to test the console.log(getRandomQuote());
 
-/**Create the `printQuote` function to: 
-   - Call the `getRandomQuote` function and assign it to a variable.
-   - Create a variable for the HTML string and set it equal to an empty string.
-   - Use the HTML template in the instructions or the markup in the index.html file, AND 
-     the random quote vairable to build your HTML string.
-   - Add the quote and source section to the HTML string.
-   - Use an if statement to check for the citation property before adding it to the HTML string.
-   - Use an if statement to check for the year property before adding it to the HTML string.
-   - Don't forget to close that final `p` tag.
-   - Set the `innerHTML` of the `quote-box` div to the HTML string. 
-***/
+/**I created the `printQuote` function. 
+   Created the `getRandomQuote` function and assign it to a variable.
+   There is a variable for the HTML string and  it has been set to an empty string.
+   ***/
 function printQuote() {
   var randomquotes = getRandomQuote();
   var message = '';
@@ -102,7 +95,7 @@ function printQuote() {
 
 }
 
-printQuote();
+newFunction();
 
 
 /***
@@ -115,4 +108,7 @@ printQuote();
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
 
+function newFunction() {
+  printQuote();
+}
 // Remember to delete the comments that came with this file, and replace them with your own code comments.

@@ -5,100 +5,114 @@ project 1 - A Random Quote Generator
 
 // The link to my project - 
 
-
 /*** 
   I created the array of quote objects and name it `quotes`.
+  Their are five arrays listed with various quotes array.
+  Each object has been assigned an `quote` and `source` property.
+  In addition, I added the `year` property to at least one object in the array. Added the tags to the arrays
+  Then in the end I used console.log() to test the code and it worked. I tested this code in google chrome and it seemed to work pretty well**/
+
+let quotes = [
+  {
+    quote: ' Things change. And friends leave. Life doesn\'t stop for anybody. ',
+    source: ' Stephen Chbosky ',
+    year: 1970,
+    citation: '-Good reads-https://www.goodreads.com/quotes ',
+    tags: ' Inspirational ',
+  },
+
+  {
+    quote: ' Be yourself,everyone else is already taken. ',
+    source: ' Oscar Wilde ',
+    year: 1942,
+    citation: '-Good Reads-https://www.goodreads.com/quotes ',
+    tags: ' Humor ',
+  },
+
+  {
+    quote: ' Two things are infinite: the universe and human stupidity; and I\'m not sure about the universe. ',
+    source: ' Albert Einstein ',
+    year: 1955,
+    citation: '-Good reads-https://www.goodreads.com/quotes ',
+    tags: ' Humor ',
+  },
+
+  {
+    quote: ' The Way Get Started Is To Quit Talking And Begin Doing.',
+    source: '-Walt Disney ',
+    year: 1963,
+    citation: ' Goal Cast-https://www.goalcast.com/2017/06/06/walt-disney-quotes-awaken-dreamer-in-you/ ',
+    tags: ' Humor ',
+  },
+
+  {
+    quote: ' You can have data without information, but you cannot have information without data,',
+    source: '- Daniel Keys Moran',
+    year: 2001,
+    citation: 'Brainy Quote-https://www.brainyquote.com/quotes/daniel_keys_moran_230911',
+    tags: ' Genius ',
+  }
+
+];
+
+// This function will generate a random color in the quotes background
+function randomRGB () {
+  return Math.floor(Math.random() * 256)
+}
+
+// This function `getRandomQuote` stores and returns all my random quotes 
+
+function getRandomQuote(quotes) { 
+var randomQuotesNumber = Math.floor(Math.random() * quotes.length);
+var randomQuote = quotes[randomQuotesNumber]
+return randomQuote;
+}
+ 
+/***
+I created the array of quote objects and name it `quotes`.
   Their are five arrays listed with various quotes array.
   Each object has been assigned an `quote` and `source` property.
   In addition, I added the `year` property to at least one object in the array.
   Then in the end I used console.log() to test the code and it worked. I tested this code in google chrome and it seemed to work pretty well**/
 
-let quotes = [
-  {
-    quote: 'Things change. And friends leave. Life doesn\'t stop for anybody.',
-    source: 'Stephen Chbosky',
-    year: 1970,
-    citation: 'Good reads-https://www.goodreads.com/quotes'
-  },
-
-  {
-    quote: 'Be yourself, everyone else is already taken.',
-    source: 'Oscar Wilde',
-    year: 1942,
-    citation: 'Good Reads-https://www.goodreads.com/quotes'
-  },
-
-  {
-    quote: 'Two things are infinite: the universe and human stupidity; and I\'m not sure about the universe.',
-    source: 'Albert Einstein',
-    year: 1955,
-    citation: 'Good reads-https://www.goodreads.com/quotes'
-  },
-
-  {
-    quote: 'The Way Get Started Is To Quit Talking And Begin Doing.',
-    source: 'Walt Disney',
-    year: 1963,
-    citation: 'Goal Cast-https://www.goalcast.com/2017/06/06/walt-disney-quotes-awaken-dreamer-in-you/'
-  },
-
-  {
-    quote: 'You can have data without information, but you cannot have information without data,',
-    source: 'Daniel Keys Moran',
-    year: 2001,
-    citation: 'Brainy Quote-https://www.brainyquote.com/quotes/daniel_keys_moran_230911'
-  }
-
-];
-
-/***
-  I created the function`getRandomQuote` and a variable has been created to store a random number. 
-  The `return` has been set to quotes and will return the randomNumber.***/
-
-function getRandomQuote() {
-  var randomNumber = Math.floor(Math.random() * quotes.length);
-  return quotes[randomNumber];
+  //Now I have added the refesh function and the timer.
+function refresh()
+{
+  var timer = setInterval(printQuote,2000);
 }
-//console.log(getRandomQuote())  This is what I used to test the actually code;
-
-/***  Created the `printQuote` function to
-   - I called the `getRandomQuote` function and assign it to a variable.
-   - Created a variable for the HTML string and set it equal to an empty string.
-   - I used the HTML template in the instructions or the markup in the index.html file, AND 
-     the random quote variable to build your HTML string.
-   - Then I put the quote and source section into the HTML string.
-   - Then the if statement has been added to check for the citation property.
-   - Then the if statement has been added to check for the year property.
-   - I have set the `innerHTML` of the `quote-box` div to the HTML string.
-   - Then I tested the print quote function and it is working. 
-***/
 function printQuote() {
-  var randomquotes = getRandomQuote();
-  var message = '';
-  message += "<p class='quote'> " + randomquotes.quote + " </p>";
-  message += "<p class='source'>" + randomquotes.source;
-  console.log(Object.keys(randomquotes));
-  if ('citation' in Object.keys(randomquotes) ) {
-    console.log("jjj");
-  }
-  if (typeof randomquotes.citation != 'undefined') {
-    message += '<span class="citation">' + randomquotes.citation + ' </span>';
-  }
+  var randomQuote = getRandomQuote(quotes);
+  var message = " ";
+  var x = randomRGB();
+  var y = randomRGB();
+  var z = randomRGB();
+  var bgColor  = "rgb("+ x +","+ y +", "+ z +")";
 
-  if (typeof randomquotes.year != 'undefined') {
-    message += "<span class='year'>" + randomquotes.year + " </span>";
-  }
-  message += '</p>';
-  document.getElementById('quote-box').innerHTML = message;
+  message += "<p class='quote'>" + randomQuote.quote + '</p>';
+  message += "<p class='source'>" + randomQuote.source ;
+//Added the If statement for citation, year and tags
+if (randomQuote.citation) {
+  message += "<span class='citation'>" + randomQuote.citation + "</span>";
 }
+if (randomQuote.year) { 
+  message += "<span class='year'>" + randomQuote.year + "</span>";
+}
+
+if (randomQuote.tags) { 
+message += "<span class='tags'>" + randomQuote.tags + "</span>";
+}
+  message += "</p>";
+
+
+ 
+document.body.style.background = bgColor;
+
+document.getElementById('quote-box').innerHTML = message;
+}
+document.getElementById('loadQuote').addEventListener("click",printQuote,false);
 
 printQuote();
 
-/***
-  The button was tested and it works.
-***/
+refresh();
+// The program is done 
 
-document.getElementById('loadQuote').addEventListener("click", printQuote, false);
-
-
-// Remember to delete the comments that came with this file, and replace them with your own code comments.
