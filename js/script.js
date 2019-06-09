@@ -9,8 +9,8 @@ project 1 - A Random Quote Generator
   I created the array of quote objects and name it `quotes`.
   Their are five arrays listed with various quotes array.
   Each object has been assigned an `quote` and `source` property.
-  In addition, I added the `year` property to at least one object in the array. Added the tags to the arrays
-  Then in the end I used console.log() to test the code and it worked. I tested this code in google chrome and it seemed to work pretty well**/
+  In addition, I added the `year` property to all the objects in the array. In addition ,the tags are included in the arrays.
+  Then in the end I used console.log() to test the code and it worked. I tested this code in google chrome and it worked **/
 
 let quotes = [
   {
@@ -40,7 +40,7 @@ let quotes = [
   {
     quote: ' The Way Get Started Is To Quit Talking And Begin Doing.',
     source: '-Walt Disney ',
-    year: 1963,
+    year: 2017,
     citation: ' Goal Cast-https://www.goalcast.com/2017/06/06/walt-disney-quotes-awaken-dreamer-in-you/ ',
     tags: ' Humor ',
   },
@@ -48,7 +48,7 @@ let quotes = [
   {
     quote: ' You can have data without information, but you cannot have information without data,',
     source: '- Daniel Keys Moran',
-    year: 2001,
+    year: 2011,
     citation: 'Brainy Quote-https://www.brainyquote.com/quotes/daniel_keys_moran_230911',
     tags: ' Genius ',
   }
