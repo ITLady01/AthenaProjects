@@ -73,12 +73,13 @@ I created the array of quote objects and name it `quotes`.
   Their are five arrays listed with various quotes array.
   Each object has been assigned an `quote` and `source` property.
   In addition, I added the `year` property to at least one object in the array.
-  Then in the end I used console.log() to test the code and it worked. I tested this code in google chrome and it seemed to work pretty well**/
+  Then in the end I used console.log() to test the code and it worked. I tested this code in google chrome and it work pretty well**/
 
-  //Now I have added the refesh function and the timer.
-function refresh()
+  //Now I have added the auto_refesh function,timer and timer1.
+function auto_refresh()
 {
-  var timer = setInterval(printQuote,2000);
+  var timer = setInterval(printQuote,4000); //I increased the 4000 milliseconds delay
+  var timer1 = clearInterval(printQuote,1000);
 }
 function printQuote() {
   var randomQuote = getRandomQuote(quotes);
@@ -86,10 +87,11 @@ function printQuote() {
   var x = randomRGB();
   var y = randomRGB();
   var z = randomRGB();
-  var bgColor  = "rgb("+ x +","+ y +", "+ z +")";
+  var rbgColor  = "rgb("+ x +","+ y +", "+ z +")";
 
   message += "<p class='quote'>" + randomQuote.quote + '</p>';
   message += "<p class='source'>" + randomQuote.source ;
+
 //Added the If statement for citation, year and tags
 if (randomQuote.citation) {
   message += "<span class='citation'>" + randomQuote.citation + "</span>";
@@ -103,16 +105,14 @@ message += "<span class='tags'>" + randomQuote.tags + "</span>";
 }
   message += "</p>";
 
-
- 
-document.body.style.background = bgColor;
+document.body.style.background = rbgColor;
 
 document.getElementById('quote-box').innerHTML = message;
 }
 document.getElementById('loadQuote').addEventListener("click",printQuote,false);
 
 printQuote();
-
-refresh();
+clearInterval();
+auto_refresh();
 // The program is done 
 
