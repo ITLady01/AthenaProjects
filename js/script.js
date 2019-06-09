@@ -78,7 +78,7 @@ I created the array of quote objects and name it `quotes`.
   //Now I have added the auto_refesh function,timer and timer1.
 function auto_refresh()
 {
-  var timer = setInterval(printQuote,7000); //I increased the 6000 milliseconds delay
+  var timer = setInterval(printQuote,7000); //I increased the 7000 milliseconds delay
   var timer1 = clearInterval();
 }
 function printQuote() {
@@ -113,6 +113,6 @@ document.getElementById('loadQuote').addEventListener("click",printQuote,false);
 
 printQuote();
 clearInterval();
-auto_refresh(6000);
+auto_refresh();
 // The program is done 
 
