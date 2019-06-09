@@ -55,19 +55,19 @@ let quotes = [
 
 ];
 
+// This function `getRandomQuote` stores and returns all my random quotes 
+
+function getRandomQuote(quotes) { 
+  var randomQuotesNumber = Math.floor(Math.random() * quotes.length);
+  var randomQuote = quotes[randomQuotesNumber]
+  return randomQuote;
+  }
+   
 // This function will generate a random color in the quotes background
 function randomRGB () {
   return Math.floor(Math.random() * 256)
 }
 
-// This function `getRandomQuote` stores and returns all my random quotes 
-
-function getRandomQuote(quotes) { 
-var randomQuotesNumber = Math.floor(Math.random() * quotes.length);
-var randomQuote = quotes[randomQuotesNumber]
-return randomQuote;
-}
- 
 /***
 I created the array of quote objects and name it `quotes`.
   Their are five arrays listed with various quotes array.
