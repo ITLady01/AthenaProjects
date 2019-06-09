@@ -17,7 +17,7 @@ let quotes = [
     quote: ' Things change. And friends leave. Life doesn\'t stop for anybody. ',
     source: ' Stephen Chbosky ',
     year: 1970,
-    citation: '-Good reads-https://www.goodreads.com/quotes ',
+    citation: ' Good reads-https://www.goodreads.com/quotes ',
     tags: ' Inspirational ',
   },
 
@@ -25,7 +25,7 @@ let quotes = [
     quote: ' Be yourself,everyone else is already taken. ',
     source: ' Oscar Wilde ',
     year: 1942,
-    citation: '-Good Reads-https://www.goodreads.com/quotes ',
+    citation: ' Good Reads-https://www.goodreads.com/quotes ',
     tags: ' Humor ',
   },
 
@@ -33,7 +33,7 @@ let quotes = [
     quote: ' Two things are infinite: the universe and human stupidity; and I\'m not sure about the universe. ',
     source: ' Albert Einstein ',
     year: 1955,
-    citation: '-Good reads-https://www.goodreads.com/quotes ',
+    citation: ' Good reads-https://www.goodreads.com/quotes ',
     tags: ' Humor ',
   },
 
@@ -78,8 +78,8 @@ I created the array of quote objects and name it `quotes`.
   //Now I have added the auto_refesh function,timer and timer1.
 function auto_refresh()
 {
-  var timer = setInterval(printQuote,4000); //I increased the 4000 milliseconds delay
-  var timer1 = clearInterval(printQuote,1000);
+  var timer = setInterval(printQuote,7000); //I increased the 6000 milliseconds delay
+  var timer1 = clearInterval();
 }
 function printQuote() {
   var randomQuote = getRandomQuote(quotes);
@@ -113,6 +113,6 @@ document.getElementById('loadQuote').addEventListener("click",printQuote,false);
 
 printQuote();
 clearInterval();
-auto_refresh();
+auto_refresh(6000);
 // The program is done 
 
