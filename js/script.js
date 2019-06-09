@@ -78,8 +78,8 @@ I created the array of quote objects and name it `quotes`.
   //Now I have added the auto_refesh function,timer and timer1.
 function auto_refresh()
 {
-  var timer = setInterval(printQuote,7000); //I increased the 7000 milliseconds delay
-  var timer1 = clearInterval();
+  var timer = setInterval(printQuote,3000); //I increased the 3000 milliseconds delay
+  var timer1 = clearInterval(timer);
 }
 function printQuote() {
   var randomQuote = getRandomQuote(quotes);
