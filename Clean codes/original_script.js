@@ -111,4 +111,3 @@ document.getElementById('loadQuote').addEventListener("click", printQuote, false
 function newFunction() {
   printQuote();
 }
-// Remember to delete the comments that came with this file, and replace them with your own code comments.

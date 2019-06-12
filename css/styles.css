@@ -77,7 +77,7 @@ body {
 
 #loadQuote {
   position: fixed;
-  width: 12em;
+  width: 14em;/***increased the size of the font by .2 rem.***/
   display: inline-block;
   left: 50%;
   margin-left: -6em;
@@ -105,6 +105,6 @@ body {
     font-size: 6rem;
   }
   .source {
-    font-size: 1.25rem;
+    font-size: 1.50rem; /***increased the size of the font by .25 rem.***/
   }
 }
