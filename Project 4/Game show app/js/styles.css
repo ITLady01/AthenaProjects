@@ -1,0 +1,290 @@
+/************************* General *************************/
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&Roboto:300');
+
+/* Variables */
+
+:root {
+  --color-win: #78CF82;
+  --color-lose: #D94545;
+  --color-start: #5b85b7;
+  --color-neutral: #445069;
+  --color-neutral-light: #D2D2D2;
+  --color-keys: #37474F;
+  --color-keys-disabled: #758b96;
+  --color-keys-light: #E5E5E5;
+  --color-keys-light-disabled: #f8f8f8;
+  --font-size-large: 60px;
+  --font-size-medium: 20px;
+  --transition: all .2s ease-in-out;
+}
+
+/* main */
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Bai Jamjuree', sans-serif;
+}
+
+body {
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  background: #5C258D;  
+  background: -webkit-linear-gradient(to left, #4389A2, #5C258D);  
+  background: -webkit-gradient(linear, right top, left top, from(#4389A2), to(#5C258D));  
+  background: -webkit-linear-gradient(right, #4389A2, #5C258D);  
+  background: -o-linear-gradient(right, #4389A2, #5C258D);  
+  background: linear-gradient(to left, #4389A2, #5C258D); 
+}
+
+li, ol, ul {
+  padding: 0;
+  display: inline-block;
+}
+
+h2 {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: var(--font-size-large);
+  margin: 0;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+#btn__reset {
+	width: 200px;
+  margin: 0 auto;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: #fff;
+}
+
+.main-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 100%;
+  max-height: 900px;
+  text-align: center;
+}
+
+.section {
+  width: 100%;
+  padding: 10px;
+}
+
+#phrase ul li{
+  margin-top: 15px;
+}
+
+/************************* Title *************************/
+
+.header {
+  color: #3a3f58;
+}
+.banner-title {
+  width: 90%;
+}
+
+
+/************************* Phrase *************************/
+
+#phrase ul li {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.letter {
+  font-size: var(--font-size-medium);
+  height: 65px;
+  width: 65px;
+  padding: 20px 1px 0 1px;
+  margin-right: 5px;
+  color: transparent;
+  border: 2px solid #fff;
+  border-radius: 5px;
+}
+
+.space {
+  width: 20px;
+}
+
+.show {
+  color: var(--color-keys);
+  background-color: #fff;
+  font-size: 20px;
+  height: 65px;
+  width: 65px;
+  padding: 20px 1px 0 1px;
+  margin-right: 2px;
+  border-radius: 5px;
+  -webkit-animation-duration: .5s;
+  animation-duration: .5s;
+}
+
+
+/************************* Keyboard *************************/
+
+.keyrow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+button {
+  margin: 6px;
+  border: 1px solid transparent;
+  padding: .5rem 1rem;
+  color: var(--color-keys);
+  font-size: var(--font-size-medium);
+  background: #fff;
+  border-radius: 5px;
+  -webkit-transition: var(--transition);
+  -o-transition: var(--transition);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.key {
+  width: 50px;
+  border: 2px solid #fff;
+}
+
+.key:disabled {
+  color: #fff;
+  background-color: transparent;
+  border: 2px solid #fff;
+}
+
+.chosen {
+  background: #3a3f58;
+  border-radius: 5px;
+  font-size: var(--font-size-medium);
+  color: #FFFFFF;
+}
+
+.wrong {
+  background: #f7a964;
+  color: #FFFFFF;
+}
+
+.btn__reset {
+  padding: 16px;
+  margin: 50px auto;
+  background: #f7a964;
+  border-radius: 5px;
+  font-size: 20px;
+  cursor: pointer;
+  border-bottom: solid 4px rgba(0, 0, 0, .3);
+  border-right: solid 3px rgba(0, 0, 0, .3)
+}
+
+.btn__reset:active {
+  padding: 14px 16px 16px 14px;
+  border-bottom: solid 4px rgba(0, 0, 0, 0);
+  border-right: solid 3px rgba(0, 0, 0, 0);
+}
+
+/************************* Scoreboard *************************/
+.tries {
+  margin: 0 5px;
+}
+
+/************************* Overlay *************************/
+
+#overlay {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: fixed;
+  color: #FFFFFF;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 5px;
+}
+
+.title {
+  width: 90%;
+}
+
+.start {
+  background: #5C258D;  
+  background: -webkit-linear-gradient(to left, #4389A2, #5C258D);  
+  background: -webkit-gradient(linear, right top, left top, from(#4389A2), to(#5C258D));  
+  background: -webkit-linear-gradient(right, #4389A2, #5C258D);  
+  background: -o-linear-gradient(right, #4389A2, #5C258D);  
+  background: linear-gradient(to left, #4389A2, #5C258D); 
+}
+
+.start a {
+  color: #fff;
+}
+
+.win {
+  background: #11998e;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #38ef7d, #11998e);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #38ef7d, #11998e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.win a {
+  color: var(--color-win);
+}
+
+.lose {
+  background: #CB356B;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #BD3F32, #CB356B);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #BD3F32, #CB356B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.lose a {
+  color: var(--color-lose);
+}
+
+/************************* Helper Classes *************************/
+.hidden {
+  display: none;
+}
+
+/************************* Media Queries *************************/
+@media screen and (min-width:768px) {
+  .title {
+    width: 50%;
+  }
+  .banner-title {
+    width: 30%;
+  }
+}
