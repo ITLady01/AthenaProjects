@@ -11,8 +11,8 @@ class Game {
         // The number of missed guesses by the player
         this.missed = 0;
         // An array of phrases to use with the game
-        this.phrases = ['i enjoy being happy everyday', 'music does not lie', 'jazz music is americas past and its potential',
-            'music is really driving my whole life', 'I am happy to be on a winning team', 'music is one of the most powerful', 'i was raised in a very humble way', 'music is an expression of individuality', 'Music was my refuge', 'Music is an higher revelation than all wisdom and philosophy', 'Jazz is smooth and cool', 'Soul music is about longevity', 'do the hustle', 'drop the ball', 'far from over', 'fit for a king', 'seize the day', 'two thumbs up'];
+        this.phrases = ['Music is like a dream.', 'music does not lie', 'jazz music is americas past and its potential',
+            'music is really driving my whole life', 'Without music, life would be a mistake ', 'music is one of the most powerful', 'music to my ears', ' march to beat of your own drumis an expression of individuality', 'Music was my refuge', 'Music is an higher revelation than all wisdom and philosophy', 'Jazz is smooth and cool', 'Soul music is about longevity', 'do the hustle', 'drop the ball', 'it takes two to tango', 'fit as fiddle', 'seize the day', 'two thumbs up'];
         // Phrase instance with random phrase to use in the game
         this.phrase = this.createPhrase();
     }

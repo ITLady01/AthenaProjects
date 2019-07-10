@@ -111,8 +111,8 @@ button {
 
 .show {
   color: #fff;
-  background-color: #4ac0d5;
-  font-size: 20px;
+  background-color: #d54ac9;
+  font-size: 21px;
   height: 65px;
   width: 65px;
   padding: 20px 1px 0 1px;
@@ -166,7 +166,7 @@ button {
   display: flex;
   flex-direction: column;
   position: fixed;
-  color: #FFFFFF;
+  color: rgb(255, 255, 255);
   justify-content: center;
   top: 0;
   bottom: 0;
