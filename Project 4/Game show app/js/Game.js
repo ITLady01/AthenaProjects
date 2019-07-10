@@ -2,7 +2,7 @@
  * Project 4 - OOP Game App
  * Game.js */
 
-
+//Section create a game class//
 
 
 // Game class
@@ -12,11 +12,14 @@ class Game {
         this.missed = 0;
         // An array of phrases to use with the game
         this.phrases = ['i enjoy being happy everyday', 'music does not lie', 'jazz music is americas past and its potential',
-     'music is really driving my whole life', 'I am happy to be on a winning team', 'music is one of the most powerful','i was raised in a very humble way', 'music is an expression of individuality', 'Music was my refuge','Music is an higher revelation than all wisdom and philosophy', 'Jazz is smooth and cool', 'Soul music is about longevity', 'do the hustle', 'drop the ball', 'far from over', 'fit for a king', 'seize the day', 'two thumbs up'];
+            'music is really driving my whole life', 'I am happy to be on a winning team', 'music is one of the most powerful', 'i was raised in a very humble way', 'music is an expression of individuality', 'Music was my refuge', 'Music is an higher revelation than all wisdom and philosophy', 'Jazz is smooth and cool', 'Soul music is about longevity', 'do the hustle', 'drop the ball', 'far from over', 'fit for a king', 'seize the day', 'two thumbs up'];
         // Phrase instance with random phrase to use in the game
         this.phrase = this.createPhrase();
     }
 
+// console.log();
+
+    
     // Get a random phrase from the phrases array
     getRandomPhrase() {
         const index = Math.floor(Math.random() * this.phrases.length);
@@ -54,7 +57,7 @@ class Game {
 
     // Removes a life
     removeLife() {
-
+        // console.log(removeLife);
         // Add 1 to the number of missed guesses
         this.missed += 1;
         

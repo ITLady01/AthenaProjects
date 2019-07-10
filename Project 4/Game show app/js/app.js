@@ -2,9 +2,6 @@
  * Project 4 - OOP Game App
  * app.js */
 
-
-
-
 // Variables
 let game;
 let pressedKeys = [];
