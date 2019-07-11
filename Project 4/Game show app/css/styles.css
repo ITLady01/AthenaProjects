@@ -4,7 +4,7 @@
 /* Variables */
 
 :root {
-  --color-win: rgb(180, 120, 207);
+  --color-win:rgb(180, 120, 207);
   --color-lose: #D94545;
   --color-start: #5b85b7;
   --color-neutral: #445069;
@@ -30,7 +30,9 @@ body {
   height: 100vh;
 }
 
-li, ol, ul {
+li,
+ol,
+ul {
   padding: 0;
   display: inline-block;
 }
@@ -61,15 +63,16 @@ button {
   transition: var(--transition);
   cursor: pointer;
 }
-p {
-  color:purple;
+p{
+  color: purple;
   font-style: bold;
   font-size:30px;
 
 }
+
 #btn__reset {
-	width: 200px;
-	margin: 0 auto;
+  width: 200px;
+  margin: 0 auto;
 }
 
 .main-container {
@@ -86,7 +89,7 @@ p {
   padding: 10px;
 }
 
-#phrase ul li{
+#phrase ul li {
   margin-top: 15px;
 }
 
@@ -103,7 +106,7 @@ p {
   font-size: var(--font-size-medium);
   height: 65px;
   width: 65px;
-  padding: 20px 1px 0 1px;
+  padding: 20px 2px 0 2px;
   margin-right: 2px;
   color: transparent;
   background: var(--color-neutral-light);
@@ -117,9 +120,9 @@ p {
 
 
 .show {
-  color: #fff;
-  background-color: #d54ac9;
-  font-size: 21px;
+  color: #d54ac9;
+  background-color: #4ac0d5;
+  font-size: 20px;
   height: 65px;
   width: 65px;
   padding: 20px 1px 0 1px;
@@ -173,7 +176,7 @@ p {
   display: flex;
   flex-direction: column;
   position: fixed;
-  color: rgb(255, 255, 255);
+  color: #FFFFFF;
   justify-content: center;
   top: 0;
   bottom: 0;
@@ -183,12 +186,12 @@ p {
 }
 
 .title {
-  color: Black;
-  font-weight:bold;
+  color: #FFF;
 }
 
 .start {
   background-color:violet;
+  font-style: bold;
 }
 
 .start a {
@@ -210,4 +213,3 @@ p {
 .lose a {
   color: var(--color-lose);
 }
-

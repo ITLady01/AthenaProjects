@@ -1,102 +1,61 @@
 /* Treehouse FSJS Techdegree
  * Project 4 - OOP Game App
  * Phrase.js */
-
-
-// Phrase class
 class Phrase {
     // Accepts a phrase
     constructor(phrase) {
-        this.phrase = phrase;
+        this.phrase = phrase.toLowerCase();
     }
-   
-    // Adds letter placeholders to the display when the game starts
-    addPhraseToDisplay() {
 
-        // Get the board
+    addPhraseToDisplay() {
+       // Adds letter placeholders to the display when the game starts
         const board = document.getElementById('phrase');
 
-        // Spread the phrase into individual characters
-        const characters = [...this.phrase];
-      
-        // Iterate over the characters array
-        characters.forEach(char => {
+        // Breaking into individual characters
+        const letters = [...this.phrase];
 
-            // Create a new li element
+        // Creating new li element and Iterate over the characters array
+        letters.forEach(char => {
             const li = document.createElement('li');
-
-            // If the character is a space, add the class 'hide space'
             if (char === ' ') {
                 li.className = 'hide space';
-
-            // Otherwise add the class 'hide letter' with the character
+                // Otherwise add the class 'hide letter' with the character
             } else {
                 li.className = `hide letter ${char}`;
                 li.textContent = char;
             }
-
-            // Append the list item to the unordered list in the board
+      // Append the list item to the unordered list in the board
             board.firstElementChild.appendChild(li);
         });
     }
 
-    // Checks to see if letter selected by player matches a letter in the phrase
-    checkLetter(event) {
-
-        // Get the letter from the button or keypress
-        let letter;
-        if (event.type === 'click') {
-            letter = event.target.textContent;
-        } else if (event.type === 'keypress') {
-            letter = event.key;
-        }
-        
-        // Spread the phrase into individual characters
-        const characters = [...this.phrase];
-
-        // Checks if there is a match in the characters array
-        
-        const indexes = characters.reduce((indexes, char, i) => {
-
-            // If the character matches the letter from the player
-            if (char === letter) {
-
-                // Add the matching character index to the indexes array
-                indexes.push(i);
-            }
-
-            // Then return the final indexes array
-            return indexes;
-        }, []);
-
-        // Returns a boolean and the indexes array
-        return {
-            match: indexes.length > 0,
-            indexes: indexes
-        }
+    //Check the letter matches the letter selected by the player
+    checkLetter(letter) {
+        return this.phrase.includes(letter);
     }
 
-    // Reveals the letter(s) on the board that matches player's selection
-    showMatchedLetter(event) {
-
-        // Matching indexes array from the checkLetter() method
-        const indexes = this.checkLetter(event).indexes;
-
-        // An array of the characters from the board
-        const boardChars = Array.from(document.getElementById('phrase').firstElementChild.children);
-
-        // Loops over each character element from the board
-        boardChars.forEach((char, i) => {
-
-            // Loops over the matching indexes array
-            indexes.forEach(index => {
-                
-                // If the matching index is the same as the character index, then change the class name to 'show letter'
-                if (index === i) {
-                    char.classList = 'show letter';
-                                }
-            });
+    getWord() {
+        const letters = [...this.phrase];
+        let word = "";
+        letters.forEach(char => {
+            word += char;
         });
+        //alert(word);
+        return word;
     }
 
+    //displaying the corresponding letter if it matches with key clicked
+    showMatchedLetter(letter) {
+        // An array of the characters from the board
+        const boardChars = document.getElementById('phrase').firstElementChild.children;
+        // Loops over each character element from the board
+        for (let i = 0; i < boardChars.length; i++) {
+            // If the matching letter is the same as the character letter, then change the class name to 'show'
+            if (boardChars[i].textContent.toLowerCase() === letter) {
+                boardChars[i].classList.add('show');
+       // If the matching letter is the same as the character letter, then change the class name to 'hide'
+                boardChars[i].classList.remove('hide');
+            }
+        }
+    }
 }

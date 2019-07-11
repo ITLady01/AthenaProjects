@@ -1,124 +1,136 @@
 /* Treehouse FSJS Techdegree
- * Project 4 - OOP Game App
+ * Project 4 -Urenwa Nwokiwu OOP Game App
  * Game.js */
 
-//Section create a game class//
-
-
-// Game class
+//This is the Game constructor and 
 class Game {
-    constructor() {
+    constructor(){
         // The number of missed guesses by the player
         this.missed = 0;
         // An array of phrases to use with the game
-        this.phrases = ['without music, life would be a mistake', 'music does not lie', 'jazz music is americas past and its potential',
-            'music to my ears', 'The only truth is music.', 'music is one of the most powerful', 'cry me a river', 'music is an expression of individuality', 'music was my refuge', 'music in the soul can be heard by the universe', 'jazz is smooth and cool', 'soul music is about longevity', 'do the hustle', 'face the music', 'living my life like its golden', 'love is friendship set to music', 'cherish the day', 'march to the beat of your own drum'];
-        // Phrase instance with random phrase to use in the game
-        this.phrase = this.createPhrase();
+        this.phrases = ['without music, life would be a mistake', 'music does not lie', 'jazz music is americas past and future',
+          'music to my ears', 'The only truth is music.', 'music is one of the most powerful', 'cry me a river', 'music is an expression of individuality', 'music was my refuge', 'music in the soul can be heard by the universe', 'jazz is smooth and cool', 'soul music is about longevity', 'do the hustle', 'face the music', 'living my life like its golden', 'love is friendship set to music', 'cherish the day', 'march to the beat of your own drum'
+        ]; // Phrase instance with random phrase to use in the game
+        this.activePhrase = null;
     }
 
-    
-    //Get a random phrase from the phrases array
-    getRandomPhrase() {
-        const index = Math.floor(Math.random() * this.phrases.length);
-        return this.phrases[index];
-        // console.log(phrases);
+    //returning random phrases from the phrases list
+    getRandomPhrase(){
+        const randomNum=Math.floor(Math.random()*this.phrases.length);
+        return this.phrases[randomNum];
     }
 
-    // Create a new instance of the Phrase class
-    createPhrase() {
-
-        // Get a random phrase
-        const randomPhrase = this.getRandomPhrase();
-
-        // Create a new instance of the Phrase class
-        return new Phrase(randomPhrase);
-    }
-         
-    // Checks to see if the letter selected by the player matches a letter in the phrase
-    handleInteraction(event) {
-
-        // Returns true if the letter matches a letter in the phrase
-        const match = this.phrase.checkLetter(event).match;
-
-        // If the selected letter matches
-        if (match) {
-
-            // Call the showMatchedLetter() method on the phrase and then call the checkForWin() method
-            this.phrase.showMatchedLetter(event);
-            this.checkForWin();
-
-        // Otherwise call the removeLife() method
-        } else {
-            this.removeLife();
+    //disabling the clicked letters from the keypad and highlighting the correct ones on the phrase
+    handleInteraction(letter){   
+    const index = document.querySelectorAll('.key');
+    if(this.activePhrase.checkLetter(letter)){
+        for(let i = 0; i < index.length; i++){
+          if(letter === index[i].textContent){
+            index[i].disabled = true;
+            index[i].classList.add('chosen');
+          }
         }
+        this.activePhrase.showMatchedLetter(letter);
     }
-       
-    // Removes a life
-   removeLife() {
-       
-        // Add 1 to the number of missed guesses
-        this.missed += 1;
-        
-        // Hide the heart
-        const hearts = Array.from(document.querySelectorAll('.tries'));
-        if (hearts.length > 0) {
-            hearts[hearts.length - 1].className = 'hidden';
+    else{
+        for(let i = 0; i < index.length; i++){
+          if(letter === index[i].textContent){
+            index[i].disabled = true;
+            index[i].classList.add('wrong');
+          }
         }
-
-        // If the player has 5 missed guesses, call gameOver()
-        if (this.missed === 5) {
-            this.gameOver();
-        }
-    }
-
-    // Checks to see if the player has selected all of the letters
-    checkForWin() {
-
-        // If there are the same number of shown letters as letters on the board, then the player wins
-        const LettersOfBoard = Array.from(document.querySelectorAll('.letter'));
-        const DisplayLetters = Array.from(document.querySelectorAll('.show'));      
-        if (LettersOfBoard.length === DisplayLetters.length) {
-            this.gameOver();
-        }
-    }
-
-    // Show success or failure screen
-    showOverlay(message, overlayClass) {
-        
-        // Show the overlay
-        const overlay = document.getElementById('overlay');
-        overlay.className = overlayClass;
-        overlay.style.display = 'flex';
-
-        // Show a message
-        const msg = document.getElementById('game-over-message');
-        msg.textContent = message;
-        // const msg1 = document.getElementById('game-over-message1');
-        // msg1.textContent = message;
-
-        // Change the text of the button
-        const btn = document.getElementById('btn__reset');
-        btn.textContent = 'Play Again';
-    }
-
-    // Displays a message if the player wins or a different message if they lose
-    gameOver() {
-
-        // If the player has 5 missed guesses then the game is over
-        if (this.missed === 5) {
-            this.showOverlay('Game over!', 'lose');
-
-        // If the player has less than 5 missed guesses then they won
-        } else if (this.missed < 5) {
-            this.showOverlay('You win!', 'win');
-        }
-    }
-
-    // Start the game
-    startGame() {
-        // Add the random phrase to the board
-        this.phrase.addPhraseToDisplay();
+        this.removeLife();
+      }
+    if(this.checkForWin()){
+        this.gameOver('win');
     }
 }
-// console.log(); I tested the code and it seems to work
+
+//removing hearts if the guesses are wrong
+    removeLife(){
+        const hearts = document.getElementById('scoreboard').firstElementChild;
+        document.getElementsByClassName('tries')[0].remove();
+        const lostLi = document.createElement('li');
+        const lostHeart=document.createElement('img');
+        lostHeart.src="images/lostHeart.png";
+        lostHeart.height = "35";
+        lostHeart.width = "30";
+        lostLi.appendChild(lostHeart);
+        hearts.appendChild(lostLi);
+        this.missed+=1;
+        if(this.missed===5){
+            this.gameOver('lose');
+        }
+        }
+
+//Checking all the words are correctly matched in the phrase
+    checkForWin(){
+        let LettersOfBoard = 0;
+        const li = document.getElementById('phrase').firstElementChild.children; 
+        let DisplayLetters = 0;
+        for ( let i = 0; i < li.length; i++) {
+        if(li[i].innerHTML!==''){
+            LettersOfBoard++;
+        }
+        if(li[i].classList.contains('show')) {
+            DisplayLetters += 1;
+        }
+        }
+        //alert(LettersOfBoard+' lettersofboard');
+        //alert(DisplayLetters+' displayletters')
+        if (DisplayLetters === LettersOfBoard) {
+            return true;
+        }
+        
+    }
+
+    //displaying the corresponding messages for win and lose 
+    gameOver(status){
+        document.getElementById('btn__reset').textContent = 'Play Again';
+        const gameMessage = document.getElementById('game-over-message');
+        const classChange = document.getElementById('overlay');
+        if(status==='win'){
+            gameMessage.innerText = 'You win! The word was '+this.activePhrase.getWord();;
+            classChange.className ="win";
+            classChange.style.display = 'flex';
+
+        }
+        if(status==='lose'){
+            //alert(this.activePhrase.getWord());
+            gameMessage.innerText = 'Sorry, try again next time! The word was '+this.activePhrase.getWord();
+            classChange.className ="lose";
+            classChange.style.display = 'flex';
+
+        }
+    }
+
+    //resetting the keypad and the phrase once the game is over
+    reset(){
+        document.getElementById('overlay').style.display = 'none';
+        document.getElementById('overlay').className = "start";
+        const keys = document.querySelectorAll('.key');
+        for(let i = 0; i < keys.length; i++){
+          keys[i].disabled = false;
+          keys[i].classList.remove('chosen', 'wrong');
+        }
+        const lives = document.querySelectorAll('img');
+        for(let i = 0; i < lives.length; i++){
+          lives[i].src = 'images/liveHeart.png';
+          lives[i].height ="35";
+          lives[i].width ="30";
+          lives[i].parentNode.setAttribute("class", "tries");
+        }
+        const hearts = document.getElementById('scoreboard').firstElementChild;
+        const ul = document.querySelector('#phrase').firstElementChild;
+        while(ul.lastChild){
+          ul.removeChild(ul.lastChild);
+        }
+      }
+
+      //starting the game on clicking the button after resetting
+      startGame(){
+        this.reset();
+        this.activePhrase = new Phrase(this.getRandomPhrase());
+        this.activePhrase.addPhraseToDisplay();
+    }
+}
