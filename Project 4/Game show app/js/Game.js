@@ -78,9 +78,9 @@ class Game {
     checkForWin() {
 
         // If there are the same number of shown letters as letters on the board, then the player wins
-        const boardLetters = Array.from(document.querySelectorAll('.letter'));
-        const shownLetters = Array.from(document.querySelectorAll('.show'));      
-        if (boardLetters.length === shownLetters.length) {
+        const LettersOfBoard = Array.from(document.querySelectorAll('.letter'));
+        const DisplayLetters = Array.from(document.querySelectorAll('.show'));      
+        if (LettersOfBoard.length === DisplayLetters.length) {
             this.gameOver();
         }
     }

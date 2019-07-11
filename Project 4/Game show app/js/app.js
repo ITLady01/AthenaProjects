@@ -6,7 +6,7 @@
 let game;
 let pressedKeys = [];
 const startBtn = document.getElementById('btn__reset');
-const keyboardBtns = document.getElementById('qwerty');
+const keyboardBtn = document.getElementById('qwerty');
 
 // Resets the display
 function resetDisplay() {
@@ -90,7 +90,7 @@ startBtn.addEventListener('click', function() {
 });
 
 // When a keyboard button is clicked
-keyboardBtns.addEventListener('click', function(event) {
+keyboardBtn.addEventListener('click', function(event) {
     // If a button is clicked, call the markButton() function
     if (event.target.tagName === 'BUTTON') {
         markButton(event);

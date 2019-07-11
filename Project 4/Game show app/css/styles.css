@@ -45,6 +45,7 @@ h2 {
 
 h1 {
   font-size: 30px;
+  font-style: bold;
 }
 
 button {
@@ -62,7 +63,7 @@ button {
 }
 p {
   color:purple;
-  font-weight: bold;
+  font-style: bold;
   font-size:30px;
 
 }
