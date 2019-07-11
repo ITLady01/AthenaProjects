@@ -24,7 +24,7 @@ class Game {
     getRandomPhrase() {
         const index = Math.floor(Math.random() * this.phrases.length);
         return this.phrases[index];
-        console.log(phrases);
+        // console.log(phrases);
     }
 
     // Create a new instance of the Phrase class
