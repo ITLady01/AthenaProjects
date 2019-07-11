@@ -3,9 +3,6 @@
  * Phrase.js */
 
 
-
-
-    
 // Phrase class
 class Phrase {
     // Accepts a phrase

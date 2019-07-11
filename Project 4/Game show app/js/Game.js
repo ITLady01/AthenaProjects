@@ -20,10 +20,11 @@ class Game {
 // console.log();
 
     
-    // Get a random phrase from the phrases array
+    //Get a random phrase from the phrases array
     getRandomPhrase() {
         const index = Math.floor(Math.random() * this.phrases.length);
         return this.phrases[index];
+        console.log(phrases);
     }
 
     // Create a new instance of the Phrase class
@@ -35,7 +36,7 @@ class Game {
         // Create a new instance of the Phrase class
         return new Phrase(randomPhrase);
     }
-
+         
     // Checks to see if the letter selected by the player matches a letter in the phrase
     handleInteraction(event) {
 
@@ -95,6 +96,8 @@ class Game {
         // Show a message
         const msg = document.getElementById('game-over-message');
         msg.textContent = message;
+        const msg1 = document.getElementById('game-over-message1');
+        msg1.textContent = message;
 
         // Change the text of the button
         const btn = document.getElementById('btn__reset');
@@ -120,3 +123,4 @@ class Game {
         this.phrase.addPhraseToDisplay();
     }
 }
+// console.log(); I tested the code and it seems to work

@@ -15,6 +15,8 @@ function resetDisplay() {
     const msg = document.getElementById('game-over-message');
     msg.textContent = '';
 
+     const msg1 = document.getElementById('game-over-message1');
+     msg.textContent = '';
     // Reset the board
     const board = document.getElementById('phrase');
     const listItems = Array.from(document.querySelector('#phrase ul').childNodes);
