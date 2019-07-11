@@ -58,7 +58,7 @@ class Game {
 
     // Removes a life
     removeLife() {
-        // console.log(removeLife);
+       
         // Add 1 to the number of missed guesses
         this.missed += 1;
         
@@ -96,8 +96,8 @@ class Game {
         // Show a message
         const msg = document.getElementById('game-over-message');
         msg.textContent = message;
-        const msg1 = document.getElementById('game-over-message1');
-        msg1.textContent = message;
+        // const msg1 = document.getElementById('game-over-message1');
+        // msg1.textContent = message;
 
         // Change the text of the button
         const btn = document.getElementById('btn__reset');

@@ -209,6 +209,4 @@ p {
 .lose a {
   color: var(--color-lose);
 }
-.hidden {
-  color: white;
-}
+
