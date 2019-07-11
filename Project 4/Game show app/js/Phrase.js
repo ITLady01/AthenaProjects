@@ -97,7 +97,7 @@ class Phrase {
                 // If the matching index is the same as the character index, then change the class name to 'show letter'
                 if (index === i) {
                     char.classList = 'show letter';
-                }
+                                }
             });
         });
     }
