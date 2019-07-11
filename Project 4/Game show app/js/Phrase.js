@@ -9,7 +9,7 @@ class Phrase {
     constructor(phrase) {
         this.phrase = phrase;
     }
-
+   
     // Adds letter placeholders to the display when the game starts
     addPhraseToDisplay() {
 

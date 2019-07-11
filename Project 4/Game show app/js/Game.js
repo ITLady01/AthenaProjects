@@ -17,8 +17,6 @@ class Game {
         this.phrase = this.createPhrase();
     }
 
-// console.log();
-
     
     //Get a random phrase from the phrases array
     getRandomPhrase() {
@@ -55,9 +53,9 @@ class Game {
             this.removeLife();
         }
     }
-
+       
     // Removes a life
-    removeLife() {
+   removeLife() {
        
         // Add 1 to the number of missed guesses
         this.missed += 1;
