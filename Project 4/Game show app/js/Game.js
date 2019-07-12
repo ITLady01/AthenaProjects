@@ -8,16 +8,16 @@ class Game {
         // The number of missed guesses by the player
         this.missed = 0;
         // An array of phrases to use with the game
-        this.phrases = ['without music, life would be a mistake', 'music does not lie', 'jazz music is americas past and future',
-          'music to my ears', 'The only truth is music.', 'music is one of the most powerful', 'cry me a river', 'music is an expression of individuality', 'music was my refuge', 'music in the soul can be heard by the universe', 'jazz is smooth and cool', 'soul music is about longevity', 'do the hustle', 'face the music', 'living my life like its golden', 'love is friendship set to music', 'cherish the day', 'march to the beat of your own drum'
-        ]; // Phrase instance with random phrase to use in the game
+        this.Phrases = ['without music, life would be a mistake', 'music does not lie', 'jazz music is americas past and future',
+          'music to my ears', 'The only truth is music.', 'music is one of the most powerful', 'cry me a river', 'music is an expression of individuality', 'music was my refuge', 'music in the soul can be heard by the universe', 'jazz is smooth and cool', 'soul music is about longevity', 'do the hustle', 'face the music', 'living my life like its golden', 'love is friendship set to music', 'cherish the day', 'march to the beat of your own drum'];
+ // Phrase instance with random phrase to use in the game
         this.activePhrase = null;
     }
 
     //returning random phrases from the phrases list
     getRandomPhrase(){
-        const randomNum=Math.floor(Math.random()*this.phrases.length);
-        return this.phrases[randomNum];
+        const randomNum=Math.floor(Math.random()*this.Phrases.length);
+        return this.Phrases[randomNum];
     }
 
     //disabling the clicked letters from the keypad and highlighting the correct ones on the phrase
