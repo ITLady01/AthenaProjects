@@ -8,17 +8,17 @@ class Game {
     // The number of missed guesses by the player
     this.missed = 0;
     // An array of phrases to use with the game
-    this.phrases = [new Phrase('without music, life would be a mistake'),
+    this.phrases = [new Phrase('without music life would be a mistake'),
       new Phrase('music does not lie'),
       new Phrase('jazz music is americas past and future'),
       new Phrase('music to my ears'),
-      new Phrase('The only truth is music.'),
+      new Phrase('The only truth is music'),
       new Phrase('music is one of the most powerful'),
       new Phrase('cry me a river'),
       new Phrase('jazz is smooth and cool'),
       new Phrase('do the hustle'),
       new Phrase('music to my ears'),
-      new Phrase('The only truth is music.')
+      new Phrase('The only truth is music')
     ];
 
 
