@@ -11,7 +11,8 @@ This are the changes that I made in my CSS and HTML file:
 
 4)I added another span tag name "THE HUNT IS ON!" in the HTML file and the color is set to rgb (206,21,206). The --transition is set to all and .3s ease in out.
 
-5)The Phrase section .show I changed the color to #d54ac9 it is a pinkish color and I added the font-weight to bold
+5)The Phrase section .show I changed the color to #d54ac9 it is a pinkish color and I added the font-weight to bold 
+5b)The Phrase section .show the background-color: #4ac0d5 which is blueish color.
 
 6)In the Overlay .start changed the color to violet and added the font-style to bold.
 
