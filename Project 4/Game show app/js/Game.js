@@ -1,5 +1,5 @@
 /* Treehouse FSJS Techdegree
- * Project 4 -Urenwa Nwokiwu OOP Game App
+ * Project 4 -Urenwa Nwokiwu-OOP Game App
  * Game.js */
 
 //This is the Game constructor and 

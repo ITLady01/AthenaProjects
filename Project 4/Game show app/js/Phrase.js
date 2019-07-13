@@ -1,5 +1,5 @@
 /* Treehouse FSJS Techdegree
- * Project 4 - OOP Game App
+ * Project 4 - Urenwa Nwokiwu-OOP Game App
  * Phrase.js */
 class Phrase {
     // Accepts a phrase
