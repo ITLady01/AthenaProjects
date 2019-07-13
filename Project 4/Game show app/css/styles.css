@@ -64,12 +64,17 @@ button {
   cursor: pointer;
 }
 p{
-  color: purple;
+  color: purple;   
   font-style: bold;
   font-size:30px;
 
 }
-
+span{
+  color: rgb(206, 21, 206);
+  font-style: bold;
+  font-size:30px;
+ 
+}
 #btn__reset {
   width: 200px;
   margin: 0 auto;
