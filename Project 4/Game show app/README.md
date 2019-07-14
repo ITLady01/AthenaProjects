@@ -1,7 +1,7 @@
 # Project 4 Game show app
  Project 4 Game show app
  
-This are the changes that I made in my CSS and HTML file:
+These are the changes that I made in my CSS and HTML file:
 
 1) In the variables section, I changed the ---color-win to rgb(180, 120, 207) light pink.
 
