@@ -18,6 +18,6 @@ This are the changes that I made in my CSS and HTML file:
 
 7)The h2 title was changed to "Musical Phrase Game" and the h2 header " " has the same name.
 
-8) Images have changed for the lost heart and lives heart.
+8)Images have changed for the lost heart and lives heart.
 
  
