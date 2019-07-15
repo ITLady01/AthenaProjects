@@ -102,16 +102,16 @@ class Game {
     const gameMessage = document.getElementById('game-over-message');
     const classChange = document.getElementById('overlay');
     if (status === 'win') {
-      gameMessage.innerText = 'You win! The word was ' + this.activePhrase.getWord();;
+      gameMessage.innerText = 'You win! The word was ' +  this.activePhrase.getWord();;
       classChange.className = "win";
       classChange.style.display = 'flex';
 
     }
     if (status === 'lose') {
       //alert(this.activePhrase.getWord());
-      gameMessage.innerText = 'Sorry, try again next time! The word was ' + this.activePhrase.getWord();
+      gameMessage.innerText = 'Sorry, try again next time! The word was ' +  this.activePhrase.getWord();
       classChange.className = "lose";
-      classChange.style.display = 'flex';
+      classChange.style.display = 'flex'; //This is pulled from the Overlay section in CSS file and 
 
     }
   }
