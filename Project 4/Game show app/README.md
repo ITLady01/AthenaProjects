@@ -1,7 +1,7 @@
 # Project 4 Game show app
  Project 4 Game show app
  
-This are the changes that I made in my CSS and HTML file:
+These are the changes that I made in my CSS and HTML file:
 
 1) In the variables section, I changed the ---color-win to rgb(180, 120, 207) light pink.
 
@@ -17,5 +17,7 @@ This are the changes that I made in my CSS and HTML file:
 6)In the Overlay .start changed the color to violet and added the font-style to bold.
 
 7)The h2 title was changed to "Musical Phrase Game" and the h2 header " " has the same name.
+
+8)Images have changed for the lost heart and lives heart.
 
  

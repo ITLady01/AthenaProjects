@@ -67,12 +67,14 @@ p{
   color: purple;   
   font-style: bold;
   font-size:30px;
+  
 
 }
 span{
   color: rgb(206, 21, 206);
   font-style: bold;
   font-size:30px;
+  --transition: all .3s ease-in-out;
  
 }
 #btn__reset {
@@ -128,6 +130,7 @@ span{
   color: #d54ac9;
   background-color: #4ac0d5;
   font-size: 20px;
+  font-weight:bold;
   height: 65px;
   width: 65px;
   padding: 20px 1px 0 1px;
